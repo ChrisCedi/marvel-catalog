@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { marvelApi } from "./api/marvelApi";
+import { Home } from "./views/Home/Home";
+import { Layout } from "./Layout/Layout";
 
 function App() {
+  // const prueba = async () => {
+  //   const response = await marvelApi.get(
+  //     `characters?ts=3&apikey=717fc2d7beae7cd0e3c30ad545d2597a&hash=0c65084a88fbfc7fb9b477ffea85b1a8`
+  //   );
+  // };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Home />
+    </Layout>
   );
 }
 
