@@ -13,7 +13,7 @@ export const Home = () => {
       <Typography variant="h3" className={classes.title}>
         Personajes
       </Typography>
-      <Grid container>
+      <Grid container spacing={2}>
         {hola.map((item, index) => (
           <Grid item xs={12} md={6} lg={4} key={index}>
             <CharacterCard />

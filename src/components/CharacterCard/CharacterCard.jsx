@@ -1,14 +1,21 @@
 import React from "react";
 import { useStyles } from "./CharacterStyles";
-import { Card, CardMedia } from "@material-ui/core";
+import { Card, CardContent, CardMedia, Typography } from "@material-ui/core";
 
 export const CharacterCard = () => {
   const classes = useStyles();
 
   return (
     <Card>
-      <CardMedia />
-      CharacterCard
+      <CardMedia
+        image="https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2022/12/spider-man-playstation-across-the-spider-verse.jpg?fit=1280%2C720&quality=80&ssl=1"
+        title="Contemplative Reptile"
+        className={classes.imageCard}
+      />
+      <CardContent>
+        <Typography>Spiderman</Typography>
+        <Typography>k aslkmdkd ask daklmdlkasmdklamsd skld alkd as</Typography>
+      </CardContent>
     </Card>
   );
 };
