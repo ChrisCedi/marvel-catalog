@@ -1,6 +1,6 @@
 import React from "react";
 import { useStyles } from "./SearchStyles";
-import { TextField, Button, Grid, IconButton } from "@material-ui/core";
+import { TextField, Button, Grid } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 
 export const Search = () => {

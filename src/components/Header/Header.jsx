@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Container, Hidden, Button } from "@material-ui/core";
+import { AppBar, Toolbar, Hidden } from "@material-ui/core";
 import { useStyles } from "./HeaderStyles";
 import { Search } from "../Search";
 
