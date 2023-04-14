@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    // textAlign: "center",
+    paddingBottom: theme.spacing(10),
   },
   gridSearch: {
     display: "flex",

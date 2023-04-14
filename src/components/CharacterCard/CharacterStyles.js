@@ -8,12 +8,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.common.white,
     display: "flex",
     justifyContent: "space-between",
-    width: "100%",
-    alignItems: "center",
   },
   logo: {
     height: "30px",
-    marginRight: theme.spacing(3),
   },
 }));
 
