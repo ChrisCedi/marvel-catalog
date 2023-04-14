@@ -7,7 +7,10 @@ export const CharacterCard = () => {
   const classes = useStyles();
 
   return (
-    <motion.div whileHover={{ scale: 1.1 }}>
+    <motion.div
+      whileHover={{ scale: 1.1 }}
+      transition={{ type: "tween", stiffness: 200, damping: 0.5 }}
+    >
       <Card>
         <CardMedia
           image="https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2022/12/spider-man-playstation-across-the-spider-verse.jpg?fit=1280%2C720&quality=80&ssl=1"
