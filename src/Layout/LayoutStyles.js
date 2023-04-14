@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
-  title: {
-    // color: theme.palette.common.white,
+  logo: {
+    height: "100px",
   },
 }));
 

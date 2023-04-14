@@ -1,17 +1,23 @@
 import React from "react";
 import { useStyles } from "./HomeStyles";
-import { Button, TextField, Typography } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
+import { Search } from "../../components/Search";
 
 export const Home = () => {
   const classes = useStyles();
 
   return (
     <div>
-      <Button color="primary" variant="outlined">
-        Consultar
-      </Button>
-      <Button color="secondary">sdasd</Button>
-      <Typography>Hola a todos con la nueva funete</Typography>
+      <Grid container>
+        <Grid item sm={12} md={6}>
+          <Typography variant="h3" className={classes.title}>
+            Personajes
+          </Typography>
+        </Grid>
+        <Grid item sm={12} md={6} className={classes.gridSearch}>
+          <Search />
+        </Grid>
+      </Grid>
     </div>
   );
 };
