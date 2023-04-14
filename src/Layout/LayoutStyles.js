@@ -15,6 +15,18 @@ const useStyles = makeStyles((theme) => ({
   body: {
     paddingTop: theme.spacing(7),
   },
+  mainDiv: {
+    backgroundImage:
+      "url(https://wallpapers.com/images/featured/0exuprkk5cwj6ail.jpg)",
+    backgroundSize: "contain",
+    height: "50vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  title: {
+    // color: theme.palette.common.white,
+  },
 }));
 
 export { useStyles };

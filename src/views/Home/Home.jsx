@@ -7,10 +7,6 @@ export const Home = () => {
 
   return (
     <div>
-      <div className={classes.mainDiv}>
-        asdasd
-        <TextField placeholder="buscar" />
-      </div>
       <Button color="primary" variant="outlined">
         Consultar
       </Button>
