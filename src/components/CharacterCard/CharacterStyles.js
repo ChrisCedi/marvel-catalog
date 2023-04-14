@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   imageCard: {
-    height: "200px",
+    height: "230px",
   },
   expand: {
     transform: "rotate(0deg)",
@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
   expandOpen: {
     transform: "rotate(180deg)",
+    color: theme.palette.secondary.main,
   },
   boxCollapse: {
     padding: theme.spacing(4),

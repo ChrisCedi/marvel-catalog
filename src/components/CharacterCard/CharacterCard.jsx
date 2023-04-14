@@ -29,12 +29,14 @@ export const CharacterCard = ({ character }) => {
     >
       <Card>
         <CardMedia
-          image="https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2022/12/spider-man-playstation-across-the-spider-verse.jpg?fit=1280%2C720&quality=80&ssl=1"
+          image={character.avatar}
           title="Contemplative Reptile"
           className={classes.imageCard}
         />
         <CardContent>
-          <Typography>{character.name}</Typography>
+          <Typography variant="h6" color="secondary">
+            {character.name}
+          </Typography>
         </CardContent>
         <CardActions>
           <IconButton
