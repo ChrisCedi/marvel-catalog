@@ -9,9 +9,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
   },
-  logo: {
-    height: "40px",
-  },
   body: {
     paddingTop: theme.spacing(7),
   },

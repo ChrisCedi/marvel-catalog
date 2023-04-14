@@ -12,6 +12,13 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.secondary.main,
     paddingTop: theme.spacing(10),
   },
+  boxProgress: {
+    width: "100%",
+    height: "50vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
 }));
 
 export { useStyles };
