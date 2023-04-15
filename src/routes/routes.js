@@ -1,5 +1,6 @@
 import { Layout } from "../Layout/Layout";
 import { Home } from "../views/Home/Home";
+import { Character } from "../views/Character";
 import { NotFound } from "../views/NotFound";
 import { FullScreenLayout } from "../Layout/FullScreenLayout/FullScreenLayout";
 
@@ -13,8 +14,8 @@ const routes = [
   },
   {
     path: "/character/:id",
-    layout: Layout,
-    component: NotFound,
+    layout: FullScreenLayout,
+    component: Character,
     exact: true,
     routeMessage: "Personaje",
   },
