@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Hidden } from "@material-ui/core";
 import { useStyles } from "./HeaderStyles";
 import { Search } from "../Search";
 
-export const Header = () => {
+export const Header = ({ showField }) => {
   const classes = useStyles();
 
   return (
@@ -24,7 +24,7 @@ export const Header = () => {
               className={classes.logo}
             />
           </Hidden>
-          <Search />
+          {showField ? <Search /> : <></>}
         </div>
       </Toolbar>
     </AppBar>

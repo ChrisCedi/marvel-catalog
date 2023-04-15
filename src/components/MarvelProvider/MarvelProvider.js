@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { MarvelContext } from "./MarvelContext";
 import { marvelApi } from "../../api/marvelApi";
 import { mapCharacters } from "./helpers";

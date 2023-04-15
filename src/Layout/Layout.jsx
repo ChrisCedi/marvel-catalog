@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, AppBar, Toolbar } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import { useStyles } from "./LayoutStyles";
 import { Header } from "../components/Header/Header";
 import { motion } from "framer-motion";
@@ -10,7 +10,7 @@ export const Layout = ({ children }) => {
 
   return (
     <>
-      <Header />
+      <Header showField={true} />
       <div className={classes.mainDiv}>
         <motion.div whileHover={{ scale: 1.2 }}>
           <img

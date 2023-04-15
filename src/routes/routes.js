@@ -1,5 +1,7 @@
 import { Layout } from "../Layout/Layout";
 import { Home } from "../views/Home/Home";
+import { NotFound } from "../views/NotFound";
+import { FullScreenLayout } from "../Layout/FullScreenLayout/FullScreenLayout";
 
 const routes = [
   {
@@ -10,16 +12,16 @@ const routes = [
     routeMessage: "Home",
   },
   {
-    path: "/:id",
+    path: "/character/:id",
     layout: Layout,
-    component: <>character id</>,
+    component: NotFound,
     exact: true,
     routeMessage: "Personaje",
   },
   {
     path: "/not-found",
-    layout: Layout,
-    component: <>not found</>,
+    layout: FullScreenLayout,
+    component: NotFound,
     exact: true,
     routeMessage: "No encontrada",
   },
