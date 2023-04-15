@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
   body: {
     paddingTop: theme.spacing(7),
   },
+  fullScreenBody: {
+    paddingTop: theme.spacing(10),
+  },
   mainDiv: {
     backgroundImage:
       "url(https://wallpapers.com/images/featured/0exuprkk5cwj6ail.jpg)",

@@ -3,6 +3,8 @@ import { makeStyles } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   title: {
     paddingBottom: theme.spacing(10),
+    letterSpacing: 8,
+    fontWeight: 600,
   },
   gridSearch: {
     display: "flex",
@@ -18,6 +20,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+  },
+  gridPagination: {
+    display: "flex",
+    justifyContent: "center",
+    paddingTop: theme.spacing(6),
   },
 }));
 

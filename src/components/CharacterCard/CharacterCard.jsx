@@ -9,6 +9,7 @@ import {
   IconButton,
   Collapse,
   Box,
+  Button,
 } from "@material-ui/core";
 import { motion } from "framer-motion";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -34,11 +35,9 @@ export const CharacterCard = ({ character }) => {
           className={classes.imageCard}
         />
         <CardContent>
-          <Typography variant="h6" color="secondary">
-            {character.name}
-          </Typography>
+          <Typography variant="h6">{character.name}</Typography>
         </CardContent>
-        <CardActions>
+        <CardActions className={classes.actions}>
           <IconButton
             className={clsx(classes.expand, {
               [classes.expandOpen]: expanded,
@@ -52,11 +51,16 @@ export const CharacterCard = ({ character }) => {
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <Box className={classes.boxCollapse}>
-            <Typography>
+            <Typography variant="body1">
               {character.description.length === 0
                 ? "No tenemos descripción de este personaje"
                 : character.description}
             </Typography>
+            <CardActions className={classes.actionsCard}>
+              <Button color="secondary" variant="contained">
+                Ver más
+              </Button>
+            </CardActions>
           </Box>
         </Collapse>
       </Card>

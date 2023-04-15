@@ -3,13 +3,14 @@ import { Container } from "@material-ui/core";
 import { useStyles } from "./LayoutStyles";
 import { Header } from "../components/Header/Header";
 import { motion } from "framer-motion";
+import { Footer } from "../components/Footer/Footer";
 
 export const Layout = ({ children }) => {
   const classes = useStyles();
 
   return (
     <>
-      <Header />
+      <Header showField={true} />
       <div className={classes.mainDiv}>
         <motion.div whileHover={{ scale: 1.2 }}>
           <img
@@ -20,6 +21,7 @@ export const Layout = ({ children }) => {
         </motion.div>
       </div>
       <Container className={classes.body}>{children}</Container>
+      <Footer />
     </>
   );
 };
