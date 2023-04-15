@@ -21,6 +21,11 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
+  gridPagination: {
+    display: "flex",
+    justifyContent: "center",
+    paddingTop: theme.spacing(6),
+  },
 }));
 
 export { useStyles };

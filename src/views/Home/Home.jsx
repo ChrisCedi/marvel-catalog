@@ -3,6 +3,7 @@ import { useStyles } from "./HomeStyles";
 import { Typography, Grid, CircularProgress, Box } from "@material-ui/core";
 import { CharacterCard } from "../../components/CharacterCard";
 import { useMarvel } from "../../components/MarvelProvider/hooks/useMarvel";
+import Pagination from "@material-ui/lab/Pagination";
 
 export const Home = () => {
   const classes = useStyles();
@@ -10,9 +11,7 @@ export const Home = () => {
 
   useEffect(() => {
     getCharacters();
-  });
-
-  console.log(characters);
+  }, []);
 
   return (
     <div>
@@ -32,6 +31,9 @@ export const Home = () => {
             </Grid>
           ))
         )}
+      </Grid>
+      <Grid className={classes.gridPagination}>
+        <Pagination count={1560 / 10} color="primary" />
       </Grid>
     </div>
   );
