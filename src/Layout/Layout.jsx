@@ -1,8 +1,9 @@
 import React from "react";
-import { Container } from "@material-ui/core";
+import { Container, AppBar, Toolbar } from "@material-ui/core";
 import { useStyles } from "./LayoutStyles";
 import { Header } from "../components/Header/Header";
 import { motion } from "framer-motion";
+import { Footer } from "../components/Footer/Footer";
 
 export const Layout = ({ children }) => {
   const classes = useStyles();
@@ -20,6 +21,7 @@ export const Layout = ({ children }) => {
         </motion.div>
       </div>
       <Container className={classes.body}>{children}</Container>
+      <Footer />
     </>
   );
 };
