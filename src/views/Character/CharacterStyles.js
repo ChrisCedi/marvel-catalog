@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    paddingBottom: theme.spacing(12),
+    paddingBottom: theme.spacing(6),
   },
   title: {
     textAlign: "left",
