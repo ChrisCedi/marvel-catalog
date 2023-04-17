@@ -7,11 +7,15 @@ import Pagination from "@material-ui/lab/Pagination";
 
 export const Home = () => {
   const classes = useStyles();
-  const { characters, getCharacters } = useMarvel();
+  const { characters, getCharacters, searchValue } = useMarvel();
 
   useEffect(() => {
     getCharacters();
   }, []);
+
+  // useEffect(() => {
+  //   getCharacters(searchValue);
+  // }, [searchValue]);
 
   return (
     <div>
