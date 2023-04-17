@@ -39,6 +39,7 @@ export const Home = () => {
               setSearchValue("");
               setInputValue("");
               getCharacters();
+              localStorage.removeItem("searchValue");
             }}
             color="secondary"
             variant="contained"

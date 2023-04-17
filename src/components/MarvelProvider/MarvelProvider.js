@@ -4,16 +4,28 @@ import { marvelApi } from "../../api/marvelApi";
 import { mapCharacters, mapCharacterInfo, mapComics } from "./helpers";
 import { PUBLIC_KEY, PRIVATE_KEY } from "../../api/config";
 import { MD5 } from "crypto-js";
+
 export const MarvelProvider = ({ children }) => {
   const [charactersList, setCharactersList] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState(
+    localStorage.getItem("searchValue")
+      ? localStorage.getItem("searchValue")
+      : ""
+  );
   const [characterInfo, setCharacterInfo] = useState({});
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState(
+    localStorage.getItem("searchValue")
+      ? localStorage.getItem("searchValue")
+      : ""
+  );
   const [comicList, setComicList] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(
+    localStorage.getItem("page") ? parseInt(localStorage.getItem("page")) : 1
+  );
 
   const nextPage = (event, value) => {
     setPage(value);
+    localStorage.setItem("page", value);
     window.scroll(0, 0);
   };
 
