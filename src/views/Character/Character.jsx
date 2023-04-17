@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useStyles } from "./CharacterStyles";
 import { useParams } from "react-router-dom";
 import { useMarvel } from "../../components/MarvelProvider/hooks/useMarvel";
-import { Typography, Grid, CardActionArea } from "@material-ui/core";
+import { Typography, Grid, CardActionArea, Divider } from "@material-ui/core";
 import { motion } from "framer-motion";
 
 export const Character = () => {
@@ -33,6 +33,9 @@ export const Character = () => {
           <Typography variant="h5" className={classes.description}>
             {characterInfo.description}
           </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Divider />
         </Grid>
         <Grid item xs={12}>
           <Typography className={classes.subtitle} variant="h4">
