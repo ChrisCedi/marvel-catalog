@@ -17,7 +17,7 @@ export const mapCharacterInfo = (value) => {
     description:
       value[0].description.length > 0
         ? value[0].description
-        : `No tenemos información sobre ${value[0].name}`,
+        : `We don´t have information about ${value[0].name}`,
     avatar: `${value[0].thumbnail.path}.${value[0].thumbnail.extension}`,
     series: value[0].series.items,
     comics: value[0].comics.items,

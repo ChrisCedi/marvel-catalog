@@ -20,8 +20,8 @@ export const Search = () => {
         <Grid item xs={9} className={classes.gridField}>
           <TextField
             variant="outlined"
-            label="Buscar personaje"
-            placeholder="Ej. hulk"
+            label="Search character"
+            placeholder="Example: hulk"
             size="small"
             className={classes.field}
             value={inputValue}

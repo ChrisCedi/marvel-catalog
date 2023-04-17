@@ -28,7 +28,7 @@ export const Home = () => {
   return (
     <div>
       <Typography variant="h3" className={classes.title}>
-        Personajes
+        Characters
       </Typography>
       {searchValue.length > 0 && (
         <Box className={classes.boxAllFilter}>
@@ -41,7 +41,7 @@ export const Home = () => {
             color="secondary"
             variant="contained"
           >
-            Ver todo
+            see all
           </Button>
         </Box>
       )}
@@ -53,7 +53,7 @@ export const Home = () => {
           </Box>
         ) : (
           characters.map((character, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+            <Grid item xs={12} sm={6} key={index}>
               <CharacterCard character={character} />
             </Grid>
           ))

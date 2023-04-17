@@ -42,38 +42,44 @@ export const Character = () => {
             Comics
           </Typography>
           <Typography variant="h6">
-            Si deseas ver más información sobre un comic dale click y te llevará
-            a la página oficial
+            Get to know the comics of this character, you can click on it will
+            take you to the offical website
           </Typography>
         </Grid>
 
-        {comicList.map((comic, index) => (
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={4}
-            lg={3}
-            key={index}
-            className={classes.gridComics}
-          >
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              className={classes.motionImage}
+        {comicList.length > 0 ? (
+          comicList.map((comic, index) => (
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              lg={3}
+              key={index}
+              className={classes.gridComics}
             >
-              <CardActionArea>
-                <a href={comic.url} className={classes.comicName}>
-                  <img
-                    src={comic.comicImage}
-                    alt={comic.name}
-                    className={classes.comicImage}
-                  />
-                </a>
-              </CardActionArea>
-              <Typography>{comic.name}</Typography>
-            </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className={classes.motionImage}
+              >
+                <CardActionArea>
+                  <a href={comic.url} className={classes.comicName}>
+                    <img
+                      src={comic.comicImage}
+                      alt={comic.name}
+                      className={classes.comicImage}
+                    />
+                  </a>
+                </CardActionArea>
+                <Typography>{comic.name}</Typography>
+              </motion.div>
+            </Grid>
+          ))
+        ) : (
+          <Grid item xs={12}>
+            <Typography variant="h6">No results</Typography>
           </Grid>
-        ))}
+        )}
       </Grid>
     </div>
   );

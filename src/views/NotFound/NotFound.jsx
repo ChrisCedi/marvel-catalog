@@ -16,7 +16,7 @@ export const NotFound = () => {
         className={classes.spImage}
       />
       <Typography className={classes.elements} variant="h5">
-        Página no encontrada
+        Page not found
       </Typography>
       <Button
         variant="contained"
@@ -24,7 +24,7 @@ export const NotFound = () => {
         className={classes.elements}
         onClick={() => navigate("/")}
       >
-        Regresar a inicio
+        go home
       </Button>
     </div>
   );
