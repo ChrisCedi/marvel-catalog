@@ -13,6 +13,7 @@ export const Search = () => {
     setSearchValue(inputValue);
     getCharacters(inputValue);
     window.scroll(0, 0);
+    localStorage.setItem("searchValue", inputValue);
   };
 
   return (
