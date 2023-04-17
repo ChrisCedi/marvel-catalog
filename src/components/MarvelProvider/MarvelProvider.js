@@ -19,11 +19,8 @@ export const MarvelProvider = ({ children }) => {
 
   const getCharacters = async (props) => {
     if (props) {
-      setPage(0);
       const response = await marvelApi.get(
-        `characters?limit=${20}&offset=${
-          characterInfo.total > 10 ? charactersList.total / 10 : page
-        }&nameStartsWith=${props}&ts=3&apikey=717fc2d7beae7cd0e3c30ad545d2597a&hash=0c65084a88fbfc7fb9b477ffea85b1a8`
+        `characters?limit=${30}&offset=${0}&nameStartsWith=${props}&ts=3&apikey=717fc2d7beae7cd0e3c30ad545d2597a&hash=0c65084a88fbfc7fb9b477ffea85b1a8`
       );
       setCharactersList(mapCharacters(response.data.data));
     } else {

@@ -24,10 +24,8 @@ export const Home = () => {
   } = useMarvel();
 
   useEffect(() => {
-    getCharacters();
+    getCharacters(searchValue);
   }, [page]);
-
-  console.log("total", charactersList.total);
 
   return (
     <div>
@@ -67,14 +65,16 @@ export const Home = () => {
           ))
         )}
       </Grid>
-      <Grid className={classes.gridPagination}>
-        <Pagination
-          count={charactersList.total > 10 ? charactersList.total / 10 : 0}
-          color="primary"
-          page={page}
-          onChange={nextPage}
-        />
-      </Grid>
+      {searchValue ? null : (
+        <Grid className={classes.gridPagination}>
+          <Pagination
+            count={Math.round(charactersList.total / 10)}
+            color="primary"
+            page={page}
+            onChange={nextPage}
+          />
+        </Grid>
+      )}
     </div>
   );
 };
