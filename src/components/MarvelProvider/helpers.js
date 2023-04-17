@@ -1,12 +1,16 @@
 export const mapCharacters = (values) => {
-  const mappedCharacters = values.map((character) => ({
-    name: character.name,
-    description: character.description,
-    id: character.id,
-    avatar: `${character.thumbnail.path}.${character.thumbnail.extension}`,
-    series: character.series.items,
-    comics: character.comics.items,
-  }));
+  const mappedCharacters = {
+    count: values.count,
+    total: values.total,
+    characters: values.results.map((character) => ({
+      name: character.name,
+      description: character.description,
+      id: character.id,
+      avatar: `${character.thumbnail.path}.${character.thumbnail.extension}`,
+      series: character.series.items,
+      comics: character.comics.items,
+    })),
+  };
 
   return mappedCharacters;
 };

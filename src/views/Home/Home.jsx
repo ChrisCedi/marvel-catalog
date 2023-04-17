@@ -14,16 +14,20 @@ import Pagination from "@material-ui/lab/Pagination";
 export const Home = () => {
   const classes = useStyles();
   const {
-    characters,
+    charactersList,
     getCharacters,
     searchValue,
     setSearchValue,
     setInputValue,
+    nextPage,
+    page,
   } = useMarvel();
 
   useEffect(() => {
     getCharacters();
-  }, []);
+  }, [page]);
+
+  console.log("total", charactersList.total);
 
   return (
     <div>
@@ -47,12 +51,16 @@ export const Home = () => {
       )}
 
       <Grid container spacing={6}>
-        {characters.length === 0 ? (
+        {charactersList.characters?.length === 0 ? (
           <Box className={classes.boxProgress}>
-            <CircularProgress />
+            {charactersList.count > 0 ? (
+              <CircularProgress />
+            ) : (
+              <Typography>No results</Typography>
+            )}
           </Box>
         ) : (
-          characters.map((character, index) => (
+          charactersList.characters?.map((character, index) => (
             <Grid item xs={12} sm={6} key={index}>
               <CharacterCard character={character} />
             </Grid>
@@ -60,7 +68,12 @@ export const Home = () => {
         )}
       </Grid>
       <Grid className={classes.gridPagination}>
-        <Pagination count={1560 / 10} color="primary" />
+        <Pagination
+          count={charactersList.total > 10 ? charactersList.total / 10 : 0}
+          color="primary"
+          page={page}
+          onChange={nextPage}
+        />
       </Grid>
     </div>
   );

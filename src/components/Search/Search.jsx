@@ -12,6 +12,7 @@ export const Search = () => {
   const handleSubmit = () => {
     setSearchValue(inputValue);
     getCharacters(inputValue);
+    window.scroll(0, 0);
   };
 
   return (
