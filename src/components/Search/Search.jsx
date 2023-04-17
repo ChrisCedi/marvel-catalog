@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useStyles } from "./SearchStyles";
 import { TextField, Button, Grid } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
@@ -6,8 +6,8 @@ import { useMarvel } from "../MarvelProvider/hooks/useMarvel";
 
 export const Search = () => {
   const classes = useStyles();
-  const { getCharacters, setSearchValue } = useMarvel();
-  const [inputValue, setInputValue] = useState("");
+  const { getCharacters, setSearchValue, inputValue, setInputValue } =
+    useMarvel();
 
   const handleSubmit = () => {
     setSearchValue(inputValue);
@@ -24,6 +24,7 @@ export const Search = () => {
             placeholder="Ej. hulk"
             size="small"
             className={classes.field}
+            value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
           />
         </Grid>

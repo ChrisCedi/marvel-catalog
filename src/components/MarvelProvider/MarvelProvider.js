@@ -7,6 +7,7 @@ export const MarvelProvider = ({ children }) => {
   const [characters, setCharacters] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [characterInfo, setCharacterInfo] = useState({});
+  const [inputValue, setInputValue] = useState("");
   const [comicList, setComicList] = useState([]);
 
   const getCharacters = async (props) => {
@@ -44,6 +45,8 @@ export const MarvelProvider = ({ children }) => {
     searchValue,
     characterInfo,
     comicList,
+    inputValue,
+    setInputValue,
     setSearchValue,
     getCharacters,
     getCharacterById,

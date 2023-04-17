@@ -2,9 +2,14 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    paddingBottom: theme.spacing(10),
-    letterSpacing: 8,
+    textAlign: "left",
+    paddingBottom: theme.spacing(4),
     fontWeight: 600,
+    textTransform: "upperCase",
+    letterSpacing: theme.spacing(1),
+    [theme.breakpoints.down("xs")]: {
+      fontSize: theme.typography.h5.fontSize,
+    },
   },
   gridSearch: {
     display: "flex",
@@ -25,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     paddingTop: theme.spacing(6),
+  },
+  boxAllFilter: {
+    marginBottom: theme.spacing(4),
   },
 }));
 

@@ -1,27 +1,50 @@
 import React, { useEffect } from "react";
 import { useStyles } from "./HomeStyles";
-import { Typography, Grid, CircularProgress, Box } from "@material-ui/core";
+import {
+  Typography,
+  Grid,
+  CircularProgress,
+  Box,
+  Button,
+} from "@material-ui/core";
 import { CharacterCard } from "../../components/CharacterCard";
 import { useMarvel } from "../../components/MarvelProvider/hooks/useMarvel";
 import Pagination from "@material-ui/lab/Pagination";
 
 export const Home = () => {
   const classes = useStyles();
-  const { characters, getCharacters, searchValue } = useMarvel();
+  const {
+    characters,
+    getCharacters,
+    searchValue,
+    setSearchValue,
+    setInputValue,
+  } = useMarvel();
 
   useEffect(() => {
     getCharacters();
   }, []);
-
-  // useEffect(() => {
-  //   getCharacters(searchValue);
-  // }, [searchValue]);
 
   return (
     <div>
       <Typography variant="h3" className={classes.title}>
         Personajes
       </Typography>
+      {searchValue.length > 0 && (
+        <Box className={classes.boxAllFilter}>
+          <Button
+            onClick={() => {
+              setSearchValue("");
+              setInputValue("");
+              getCharacters();
+            }}
+            color="secondary"
+            variant="contained"
+          >
+            Ver todo
+          </Button>
+        </Box>
+      )}
 
       <Grid container spacing={6}>
         {characters.length === 0 ? (
