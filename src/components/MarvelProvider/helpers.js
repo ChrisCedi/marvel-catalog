@@ -10,3 +10,28 @@ export const mapCharacters = (values) => {
 
   return mappedCharacters;
 };
+
+export const mapCharacterInfo = (value) => {
+  const mappedCharacterInfo = {
+    name: value[0].name,
+    description:
+      value[0].description.length > 0
+        ? value[0].description
+        : `No tenemos información sobre ${value[0].name}`,
+    avatar: `${value[0].thumbnail.path}.${value[0].thumbnail.extension}`,
+    series: value[0].series.items,
+    comics: value[0].comics.items,
+  };
+
+  return mappedCharacterInfo;
+};
+
+export const mapComics = (values) => {
+  const mappedComics = values.map((comic) => ({
+    name: comic.title,
+    comicImage: `${comic.thumbnail.path}.${comic.thumbnail.extension}`,
+    url: comic.urls[0].url,
+  }));
+
+  return mappedComics;
+};

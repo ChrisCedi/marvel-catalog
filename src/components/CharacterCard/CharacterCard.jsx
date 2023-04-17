@@ -14,10 +14,12 @@ import {
 import { motion } from "framer-motion";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import clsx from "clsx";
+import { useNavigate } from "react-router";
 
 export const CharacterCard = ({ character }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
+  const navigate = useNavigate();
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -57,7 +59,11 @@ export const CharacterCard = ({ character }) => {
                 : character.description}
             </Typography>
             <CardActions className={classes.actionsCard}>
-              <Button color="secondary" variant="contained">
+              <Button
+                color="secondary"
+                variant="contained"
+                onClick={() => navigate(`/character/${character.id}`)}
+              >
                 Ver más
               </Button>
             </CardActions>
