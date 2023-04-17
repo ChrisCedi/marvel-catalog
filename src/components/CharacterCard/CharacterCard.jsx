@@ -55,7 +55,7 @@ export const CharacterCard = ({ character }) => {
           <Box className={classes.boxCollapse}>
             <Typography variant="body1">
               {character.description.length === 0
-                ? "No tenemos descripción de este personaje"
+                ? "We don´t have information for this character"
                 : character.description}
             </Typography>
             <CardActions className={classes.actionsCard}>
@@ -64,7 +64,7 @@ export const CharacterCard = ({ character }) => {
                 variant="contained"
                 onClick={() => navigate(`/character/${character.id}`)}
               >
-                Ver más
+                See more
               </Button>
             </CardActions>
           </Box>

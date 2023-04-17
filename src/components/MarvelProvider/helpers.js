@@ -1,12 +1,16 @@
 export const mapCharacters = (values) => {
-  const mappedCharacters = values.map((character) => ({
-    name: character.name,
-    description: character.description,
-    id: character.id,
-    avatar: `${character.thumbnail.path}.${character.thumbnail.extension}`,
-    series: character.series.items,
-    comics: character.comics.items,
-  }));
+  const mappedCharacters = {
+    count: values.count,
+    total: values.total,
+    characters: values.results.map((character) => ({
+      name: character.name,
+      description: character.description,
+      id: character.id,
+      avatar: `${character.thumbnail.path}.${character.thumbnail.extension}`,
+      series: character.series.items,
+      comics: character.comics.items,
+    })),
+  };
 
   return mappedCharacters;
 };
@@ -17,7 +21,7 @@ export const mapCharacterInfo = (value) => {
     description:
       value[0].description.length > 0
         ? value[0].description
-        : `No tenemos información sobre ${value[0].name}`,
+        : `We don´t have information about ${value[0].name}`,
     avatar: `${value[0].thumbnail.path}.${value[0].thumbnail.extension}`,
     series: value[0].series.items,
     comics: value[0].comics.items,

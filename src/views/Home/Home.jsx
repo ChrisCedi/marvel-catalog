@@ -1,40 +1,80 @@
 import React, { useEffect } from "react";
 import { useStyles } from "./HomeStyles";
-import { Typography, Grid, CircularProgress, Box } from "@material-ui/core";
+import {
+  Typography,
+  Grid,
+  CircularProgress,
+  Box,
+  Button,
+} from "@material-ui/core";
 import { CharacterCard } from "../../components/CharacterCard";
 import { useMarvel } from "../../components/MarvelProvider/hooks/useMarvel";
 import Pagination from "@material-ui/lab/Pagination";
 
 export const Home = () => {
   const classes = useStyles();
-  const { characters, getCharacters } = useMarvel();
+  const {
+    charactersList,
+    getCharacters,
+    searchValue,
+    setSearchValue,
+    setInputValue,
+    nextPage,
+    page,
+  } = useMarvel();
 
   useEffect(() => {
-    getCharacters();
-  }, []);
+    getCharacters(searchValue);
+  }, [page]);
 
   return (
     <div>
       <Typography variant="h3" className={classes.title}>
-        Personajes
+        Characters
       </Typography>
+      {searchValue.length > 0 && (
+        <Box className={classes.boxAllFilter}>
+          <Button
+            onClick={() => {
+              setSearchValue("");
+              setInputValue("");
+              getCharacters();
+            }}
+            color="secondary"
+            variant="contained"
+          >
+            see all
+          </Button>
+        </Box>
+      )}
 
       <Grid container spacing={6}>
-        {characters.length === 0 ? (
+        {charactersList.characters?.length === 0 ? (
           <Box className={classes.boxProgress}>
-            <CircularProgress />
+            {charactersList.count > 0 ? (
+              <CircularProgress />
+            ) : (
+              <Typography>No results</Typography>
+            )}
           </Box>
         ) : (
-          characters.map((character, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+          charactersList.characters?.map((character, index) => (
+            <Grid item xs={12} sm={6} key={index}>
               <CharacterCard character={character} />
             </Grid>
           ))
         )}
       </Grid>
-      <Grid className={classes.gridPagination}>
-        <Pagination count={1560 / 10} color="primary" />
-      </Grid>
+      {searchValue ? null : (
+        <Grid className={classes.gridPagination}>
+          <Pagination
+            count={Math.round(charactersList.total / 10)}
+            color="primary"
+            page={page}
+            onChange={nextPage}
+          />
+        </Grid>
+      )}
     </div>
   );
 };

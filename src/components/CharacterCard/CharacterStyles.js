@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   imageCard: {
-    height: "210px",
+    height: "250px",
   },
   expand: {
     transform: "rotate(0deg)",
