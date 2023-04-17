@@ -12,6 +12,14 @@ const useStyles = makeStyles((theme) => ({
   toolBar: {
     display: "flex",
     justifyContent: "center",
+    flexDirection: "column",
+  },
+  linkGit: {
+    textDecoration: "none",
+    color: theme.palette.common.black,
+  },
+  linkApi: {
+    textDecoration: "none",
   },
 }));
 

@@ -8,7 +8,13 @@ export const Footer = () => {
   return (
     <AppBar className={classes.appBar}>
       <Toolbar className={classes.toolBar}>
-        <Typography color="secondary">Api marvel</Typography>
+        <a href="https://github.com/ChrisCedi/" className={classes.linkGit}>
+          <Typography>@ Christian Cedillo 2023</Typography>
+        </a>
+        <Typography className={classes.linkGit}>Resources by </Typography>
+        <a href="https://developer.marvel.com/" className={classes.linkApi}>
+          <Typography color="primary"> Marvel</Typography>
+        </a>
       </Toolbar>
     </AppBar>
   );
