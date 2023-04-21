@@ -10,15 +10,17 @@ import {
   Collapse,
   Box,
   Button,
+  withWidth,
 } from "@material-ui/core";
 import { motion } from "framer-motion";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import clsx from "clsx";
 import { useNavigate } from "react-router";
 
-export const CharacterCard = ({ character }) => {
+const CharacterCard = ({ character, width }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
+
   const navigate = useNavigate();
 
   const handleExpandClick = () => {
@@ -27,8 +29,9 @@ export const CharacterCard = ({ character }) => {
 
   return (
     <motion.div
-      whileHover={{ scale: 1.1 }}
+      whileHover={width === "xs" ? { scale: 1 } : { scale: 1.1 }}
       transition={{ type: "tween", stiffness: 200, damping: 0.5 }}
+      className={classes.card}
     >
       <Card>
         <CardMedia
@@ -73,3 +76,5 @@ export const CharacterCard = ({ character }) => {
     </motion.div>
   );
 };
+
+export default withWidth()(CharacterCard);

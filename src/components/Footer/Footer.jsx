@@ -9,7 +9,7 @@ export const Footer = () => {
     <AppBar className={classes.appBar}>
       <Toolbar className={classes.toolBar}>
         <a href="https://github.com/ChrisCedi/" className={classes.linkGit}>
-          <Typography>@ Christian Cedillo 2023</Typography>
+          <Typography>@ 2023 Christian Cedillo</Typography>
         </a>
         <Typography className={classes.linkGit}>Resources by </Typography>
         <a href="https://developer.marvel.com/" className={classes.linkApi}>

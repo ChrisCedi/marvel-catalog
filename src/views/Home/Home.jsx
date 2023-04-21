@@ -1,15 +1,10 @@
 import React, { useEffect } from "react";
 import { useStyles } from "./HomeStyles";
-import {
-  Typography,
-  Grid,
-  CircularProgress,
-  Box,
-  Button,
-} from "@material-ui/core";
-import { CharacterCard } from "../../components/CharacterCard";
+import { Typography, Grid, Box, Button } from "@material-ui/core";
+import CharacterCard from "../../components/CharacterCard/CharacterCard";
 import { useMarvel } from "../../components/MarvelProvider/hooks/useMarvel";
 import Pagination from "@material-ui/lab/Pagination";
+import { Images } from "../../assets/Images";
 
 export const Home = () => {
   const classes = useStyles();
@@ -49,18 +44,19 @@ export const Home = () => {
         </Box>
       )}
 
-      <Grid container spacing={6}>
+      <Grid container spacing={4}>
         {charactersList.characters?.length === 0 ? (
           <Box className={classes.boxProgress}>
-            {charactersList.count > 0 ? (
-              <CircularProgress />
-            ) : (
-              <Typography>No results</Typography>
-            )}
+            <img
+              src={Images.spidermanEmpty}
+              alt="spEmpty"
+              className={classes.spEmpty}
+            />
+            <Typography>No results</Typography>
           </Box>
         ) : (
           charactersList.characters?.map((character, index) => (
-            <Grid item xs={12} sm={6} key={index}>
+            <Grid item xs={12} sm={6} key={index} className={classes.gridCards}>
               <CharacterCard character={character} />
             </Grid>
           ))
@@ -73,6 +69,7 @@ export const Home = () => {
             color="primary"
             page={page}
             onChange={nextPage}
+            size="small"
           />
         </Grid>
       )}

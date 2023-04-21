@@ -1,6 +1,9 @@
 import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
+  card: {
+    width: "95%",
+  },
   imageCard: {
     height: "250px",
   },

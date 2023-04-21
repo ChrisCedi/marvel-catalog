@@ -25,6 +25,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    flexDirection: "column",
+  },
+  gridCards: {
+    display: "flex",
+    justifyContent: "center",
   },
   gridPagination: {
     display: "flex",
@@ -33,6 +38,11 @@ const useStyles = makeStyles((theme) => ({
   },
   boxAllFilter: {
     marginBottom: theme.spacing(4),
+  },
+
+  spEmpty: {
+    height: "200px",
+    marginBottom: theme.spacing(2),
   },
 }));
 
