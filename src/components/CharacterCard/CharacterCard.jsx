@@ -29,7 +29,7 @@ const CharacterCard = ({ character, width }) => {
 
   return (
     <motion.div
-      whileHover={width === "sm" ? { scale: 1 } : { scale: 1.1 }}
+      whileHover={width === "xs" ? { scale: 1 } : { scale: 1.1 }}
       transition={{ type: "tween", stiffness: 200, damping: 0.5 }}
       className={classes.card}
     >

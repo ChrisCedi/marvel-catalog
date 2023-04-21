@@ -73,6 +73,7 @@ export const Home = () => {
             color="primary"
             page={page}
             onChange={nextPage}
+            size="small"
           />
         </Grid>
       )}
