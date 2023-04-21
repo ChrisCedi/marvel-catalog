@@ -7,7 +7,7 @@ import {
   Box,
   Button,
 } from "@material-ui/core";
-import { CharacterCard } from "../../components/CharacterCard";
+import CharacterCard from "../../components/CharacterCard/CharacterCard";
 import { useMarvel } from "../../components/MarvelProvider/hooks/useMarvel";
 import Pagination from "@material-ui/lab/Pagination";
 
@@ -49,7 +49,7 @@ export const Home = () => {
         </Box>
       )}
 
-      <Grid container spacing={6}>
+      <Grid container spacing={4}>
         {charactersList.characters?.length === 0 ? (
           <Box className={classes.boxProgress}>
             {charactersList.count > 0 ? (
@@ -60,7 +60,7 @@ export const Home = () => {
           </Box>
         ) : (
           charactersList.characters?.map((character, index) => (
-            <Grid item xs={12} sm={6} key={index}>
+            <Grid item xs={12} sm={6} key={index} className={classes.gridCards}>
               <CharacterCard character={character} />
             </Grid>
           ))

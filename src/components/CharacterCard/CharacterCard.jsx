@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useStyles } from "./CharacterStyles";
 import {
   Card,
@@ -10,16 +10,22 @@ import {
   Collapse,
   Box,
   Button,
+  withWidth,
 } from "@material-ui/core";
 import { motion } from "framer-motion";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import clsx from "clsx";
 import { useNavigate } from "react-router";
 
-export const CharacterCard = ({ character }) => {
+const CharacterCard = ({ character, width }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
+  const [isMobile, setIsMobile] = useState();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setIsMobile(width);
+  }, [width]);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -27,8 +33,9 @@ export const CharacterCard = ({ character }) => {
 
   return (
     <motion.div
-      whileHover={{ scale: 1.1 }}
+      whileHover={isMobile === "xs" ? { scale: 1 } : { scale: 1.1 }}
       transition={{ type: "tween", stiffness: 200, damping: 0.5 }}
+      className={classes.card}
     >
       <Card>
         <CardMedia
@@ -73,3 +80,5 @@ export const CharacterCard = ({ character }) => {
     </motion.div>
   );
 };
+
+export default withWidth()(CharacterCard);

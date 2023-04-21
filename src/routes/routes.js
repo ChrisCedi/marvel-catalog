@@ -17,14 +17,14 @@ const routes = [
     layout: FullScreenLayout,
     component: Character,
     exact: true,
-    routeMessage: "Personaje",
+    routeMessage: "character",
   },
   {
     path: "/not-found",
     layout: FullScreenLayout,
     component: NotFound,
     exact: true,
-    routeMessage: "No encontrada",
+    routeMessage: "Not found",
   },
 ];
 

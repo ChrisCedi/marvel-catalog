@@ -26,6 +26,10 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
+  gridCards: {
+    display: "flex",
+    justifyContent: "center",
+  },
   gridPagination: {
     display: "flex",
     justifyContent: "center",
