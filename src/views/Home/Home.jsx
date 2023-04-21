@@ -1,12 +1,6 @@
 import React, { useEffect } from "react";
 import { useStyles } from "./HomeStyles";
-import {
-  Typography,
-  Grid,
-  CircularProgress,
-  Box,
-  Button,
-} from "@material-ui/core";
+import { Typography, Grid, Box, Button } from "@material-ui/core";
 import CharacterCard from "../../components/CharacterCard/CharacterCard";
 import { useMarvel } from "../../components/MarvelProvider/hooks/useMarvel";
 import Pagination from "@material-ui/lab/Pagination";
