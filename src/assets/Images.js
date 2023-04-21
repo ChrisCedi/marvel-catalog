@@ -1,6 +1,6 @@
 import spidermanConfused from "./files/spiderman-confused.gif";
-import emptyGif from "./files/empty.gif";
+import spidermanEmpty from "./files/spiderman-empty.gif";
 
-const Images = { spidermanConfused, emptyGif };
+const Images = { spidermanConfused, spidermanEmpty };
 
 export { Images };

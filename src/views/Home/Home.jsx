@@ -10,6 +10,7 @@ import {
 import CharacterCard from "../../components/CharacterCard/CharacterCard";
 import { useMarvel } from "../../components/MarvelProvider/hooks/useMarvel";
 import Pagination from "@material-ui/lab/Pagination";
+import { Images } from "../../assets/Images";
 
 export const Home = () => {
   const classes = useStyles();
@@ -52,11 +53,12 @@ export const Home = () => {
       <Grid container spacing={4}>
         {charactersList.characters?.length === 0 ? (
           <Box className={classes.boxProgress}>
-            {charactersList.count > 0 ? (
-              <CircularProgress />
-            ) : (
-              <Typography>No results</Typography>
-            )}
+            <img
+              src={Images.spidermanEmpty}
+              alt="spEmpty"
+              className={classes.spEmpty}
+            />
+            <Typography>No results</Typography>
           </Box>
         ) : (
           charactersList.characters?.map((character, index) => (
