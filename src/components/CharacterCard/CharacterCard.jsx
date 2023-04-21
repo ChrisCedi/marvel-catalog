@@ -20,12 +20,8 @@ import { useNavigate } from "react-router";
 const CharacterCard = ({ character, width }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
-  const [isMobile, setIsMobile] = useState();
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    setIsMobile(width);
-  }, [width]);
+  const navigate = useNavigate();
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -33,7 +29,7 @@ const CharacterCard = ({ character, width }) => {
 
   return (
     <motion.div
-      whileHover={isMobile === "xs" ? { scale: 1 } : { scale: 1.1 }}
+      whileHover={width === "sm" ? { scale: 1 } : { scale: 1.1 }}
       transition={{ type: "tween", stiffness: 200, damping: 0.5 }}
       className={classes.card}
     >

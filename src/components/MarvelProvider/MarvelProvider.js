@@ -31,7 +31,6 @@ export const MarvelProvider = ({ children }) => {
 
   let ts = Date.now().toString();
   let hash = MD5(ts + PRIVATE_KEY + PUBLIC_KEY).toString();
-  console.log(hash);
 
   const getCharacters = async (props) => {
     if (props) {
